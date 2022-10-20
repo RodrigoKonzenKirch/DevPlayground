@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.devplayground.ui.bottombarscreen.BottomBarScreen
+import com.example.devplayground.ui.cards.CardsScreen
 import com.example.devplayground.ui.listscreen.ListScreen
 import com.example.devplayground.ui.mainscreen.AppMainScreen
 import com.example.devplayground.ui.nextscreen.NextScreen
@@ -30,11 +31,12 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     NavHost(navController = navController, startDestination = "mainScreen"){
                         composable("mainScreen"){ AppMainScreen(navController) }
+                        // navController shouldn't be sent as parameter in a real app
                         composable("nextScreen"){ NextScreen(navController = navController) }
                         composable("listScreen"){ ListScreen() }
                         composable("bottomBarScreen"){ BottomBarScreen() }
                         composable("tabsScreen"){ TabsScreen() }
-
+                        composable("cardScreen"){ CardsScreen() }
                     }
                 }
             }

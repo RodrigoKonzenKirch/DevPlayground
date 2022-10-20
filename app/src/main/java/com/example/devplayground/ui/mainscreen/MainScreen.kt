@@ -48,5 +48,13 @@ fun AppMainScreen(navController: NavController) {
         ) {
             Text(text = "Go to screen with tabs")
         }
+
+        Button(
+            modifier = Modifier
+                .padding(8.dp)
+                .fillMaxWidth(),
+            onClick = { navController.navigate("cardScreen") }) {
+            Text(text = "Go to cards screen")
+        }
     }
 }
